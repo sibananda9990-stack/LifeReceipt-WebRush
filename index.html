@@ -3,136 +3,431 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LifeReceipt turns your digital memories into a beautiful searchable timeline of receipts." />
+  <meta
+    name="description"
+    content="LifeReceipt turns everyday digital memories into a beautiful searchable timeline of receipts."
+  />
   <title>LifeReceipt — Your Life, In Receipts</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#" aria-label="LifeReceipt home">
-        <span class="brand-mark">⌁</span>
+        <span class="brand-mark">✦</span>
         <span>Life<span>Receipt</span></span>
       </a>
+
       <div class="top-actions">
-        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">☾</button>
-        <button class="avatar" aria-label="Profile">KS</button>
+        <button
+          class="icon-btn"
+          id="themeBtn"
+          type="button"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        >
+          ◐
+        </button>
+
+        <button
+          class="avatar"
+          type="button"
+          aria-label="Profile"
+        >
+          KS
+        </button>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div>
+    <main id="mainContent">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
           <p class="eyebrow">YOUR DIGITAL LIFE, ORGANIZED</p>
-          <h1>Your Life,<br><span>In Receipts.</span></h1>
-          <p class="hero-copy">Every song, place, photo, purchase and message becomes a tiny receipt of who you were in that moment.</p>
+
+          <h1 id="heroTitle">
+            Your Life,<br />
+            <span>In Receipts.</span>
+          </h1>
+
+          <p class="hero-copy-text">
+            Every song, place, photo, purchase and message becomes a tiny
+            receipt of who you were in that moment.
+          </p>
+
           <div class="hero-actions">
-            <button class="primary-btn" id="addBtn">＋ Add a memory</button>
-            <button class="ghost-btn" id="randomBtn">✦ Surprise me</button>
+            <button class="primary-btn" id="addBtn" type="button">
+              ＋ Add a memory
+            </button>
+
+            <button class="ghost-btn" id="randomBtn" type="button">
+              ✦ Surprise me
+            </button>
           </div>
         </div>
+
         <div class="hero-receipt" aria-label="Sample life receipt">
           <div class="receipt-top">
-            <span>LIFERECEIPT™</span><span>#2026-091</span>
+            <span>LIFERECEIPT™</span>
+            <span>#2026-091</span>
           </div>
-          <div class="receipt-title">A SMALL DAY<br>WORTH KEEPING.</div>
+
+          <div class="receipt-title">
+            A SMALL DAY<br />
+            WORTH KEEPING.
+          </div>
+
           <div class="receipt-line"></div>
-          <div class="mini-row"><span>♪ Late Night Drive</span><b>01:42</b></div>
-          <div class="mini-row"><span>⌖ Bhadrak, IN</span><b>18 km</b></div>
-          <div class="mini-row"><span>◉ Coffee & thoughts</span><b>₹120</b></div>
+
+          <div class="mini-row">
+            <span>Late Night Drive</span>
+            <b>01:42</b>
+          </div>
+
+          <div class="mini-row">
+            <span>Badrak, IN</span>
+            <b>18 km</b>
+          </div>
+
+          <div class="mini-row">
+            <span>Coffee & thoughts</span>
+            <b>₹120</b>
+          </div>
+
           <div class="receipt-line"></div>
-          <div class="receipt-total"><span>MEMORY VALUE</span><b>PRICELESS</b></div>
-          <div class="barcode">▌▌ ▌▌▌ ▌ ▌▌ ▌▌▌ ▌▌</div>
+
+          <div class="receipt-total">
+            <span>MEMORY VALUE</span>
+            <b>PRICELESS</b>
+          </div>
+
+          <div class="barcode">
+            ▮▮ ▮ ▮▮▮ ▮▮ ▮ ▮▮▮ ▮▮
+          </div>
         </div>
       </section>
 
+      <!-- STATS -->
       <section class="stats" aria-label="Memory statistics">
-        <div class="stat-card"><span>Total receipts</span><strong id="totalStat">12</strong><small>captured moments</small></div>
-        <div class="stat-card"><span>This month</span><strong id="monthStat">07</strong><small>new memories</small></div>
-        <div class="stat-card"><span>Places</span><strong id="placesStat">05</strong><small>locations visited</small></div>
-        <div class="stat-card"><span>Most active</span><strong id="activeStat">Night</strong><small>your memory hour</small></div>
+        <div class="stat-card">
+          <span>Total receipts</span>
+          <strong id="totalStat">0</strong>
+          <small>captured moments</small>
+        </div>
+
+        <div class="stat-card">
+          <span>This month</span>
+          <strong id="monthStat">0</strong>
+          <small>new memories</small>
+        </div>
+
+        <div class="stat-card">
+          <span>Places</span>
+          <strong id="placesStat">0</strong>
+          <small>locations visited</small>
+        </div>
+
+        <div class="stat-card">
+          <span>Top category</span>
+          <strong id="activeStat">—</strong>
+          <small>most memories</small>
+        </div>
       </section>
 
-      <section class="toolbar-section">
+      <!-- INSIGHTS -->
+      <section class="insights-section" aria-labelledby="insightsTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LIFE INSIGHTS</p>
+            <h2 id="insightsTitle">Your memory patterns</h2>
+          </div>
+        </div>
+
+        <div class="insights-grid">
+          <article class="insight-card">
+            <span>Total moments</span>
+            <strong id="insightTotal">0</strong>
+            <small>receipts saved</small>
+          </article>
+
+          <article class="insight-card">
+            <span>Latest memory</span>
+            <strong id="latestMemory">—</strong>
+            <small>most recent receipt</small>
+          </article>
+
+          <article class="insight-card">
+            <span>Favorite category</span>
+            <strong id="favoriteCategory">—</strong>
+            <small>your biggest archive</small>
+          </article>
+
+          <article class="insight-card">
+            <span>Memory streak</span>
+            <strong id="streakStat">0</strong>
+            <small>consecutive memory days</small>
+          </article>
+        </div>
+
+        <div class="category-panel">
+          <div class="category-panel-head">
+            <h3>Category breakdown</h3>
+            <span id="categoryTotal">0 memories</span>
+          </div>
+
+          <div id="categoryBars" class="category-bars"></div>
+        </div>
+      </section>
+
+      <!-- ARCHIVE -->
+      <section class="toolbar-section" aria-labelledby="archiveTitle">
         <div class="section-heading">
           <div>
             <p class="eyebrow">THE ARCHIVE</p>
-            <h2>Your memory receipts</h2>
+            <h2 id="archiveTitle">Your memory receipts</h2>
           </div>
-          <span class="count-pill" id="countPill">12 receipts</span>
+
+          <span class="count-pill" id="countPill">0 receipts</span>
         </div>
+
         <div class="toolbar">
           <label class="search">
-            <span>⌕</span>
-            <input id="searchInput" type="search" placeholder="Search memories, places, songs..." />
+            <span class="sr-only">Search memories</span>
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search memories, places, songs..."
+              maxlength="80"
+            />
           </label>
-          <div class="filters" role="group" aria-label="Filter memories">
-            <button class="filter active" data-filter="all">All</button>
-            <button class="filter" data-filter="music">♪ Music</button>
-            <button class="filter" data-filter="place">⌖ Places</button>
-            <button class="filter" data-filter="purchase">₹ Purchases</button>
-            <button class="filter" data-filter="photo">◉ Photos</button>
-            <button class="filter" data-filter="message">✉ Messages</button>
-          </div>
+
+          <label class="sort-control">
+            <span class="sr-only">Sort memories</span>
+            <select id="sortSelect">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="title">Title A–Z</option>
+              <option value="value">Highest value</option>
+            </select>
+          </label>
+
+          <button class="secondary-btn" id="clearBtn" type="button">
+            Clear
+          </button>
+
+          <button class="secondary-btn" id="exportBtn" type="button">
+            Export
+          </button>
+        </div>
+
+        <div
+          class="filters"
+          role="group"
+          aria-label="Filter memories"
+        >
+          <button
+            class="filter active"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="music"
+            aria-pressed="false"
+          >
+            Music
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="place"
+            aria-pressed="false"
+          >
+            Places
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="purchase"
+            aria-pressed="false"
+          >
+            Purchases
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="photo"
+            aria-pressed="false"
+          >
+            Photos
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="message"
+            aria-pressed="false"
+          >
+            Messages
+          </button>
         </div>
       </section>
 
-      <section class="receipt-grid" id="receiptGrid" aria-live="polite"></section>
-      <div class="empty" id="emptyState" hidden>
-        <div class="empty-icon">⌁</div>
-        <h3>No receipt found</h3>
-        <p>Try another search or add a new memory.</p>
-        <button class="primary-btn" id="emptyAddBtn">＋ Add memory</button>
-      </div>
+      <!-- RECEIPTS -->
+      <section aria-label="Memory receipts">
+        <div id="receiptGrid" class="receipt-grid"></div>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-icon">⌁</div>
+          <h3>No receipts found</h3>
+          <p>
+            Try another search or create a new memory to start your archive.
+          </p>
+          <button class="primary-btn" id="emptyAddBtn" type="button">
+            ＋ Add a memory
+          </button>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <span>LifeReceipt © 2026</span>
-      <span>Made for WebRush · Frontend-only experience</span>
+    <footer class="footer">
+      <span>LifeReceipt™</span>
+      <span>Small moments. Real receipts.</span>
     </footer>
   </div>
 
-  <div class="modal-backdrop" id="modalBackdrop" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
-      <p class="eyebrow">NEW RECEIPT</p>
-      <h2 id="modalTitle">Capture a moment.</h2>
-      <p class="modal-sub">Turn a tiny part of your digital life into a receipt you can keep.</p>
+  <!-- MODAL -->
+  <div
+    class="modal-backdrop"
+    id="modalBackdrop"
+    hidden
+  >
+    <section
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">NEW RECEIPT</p>
+          <h2 id="modalTitle">Add a memory</h2>
+        </div>
+
+        <button
+          class="icon-btn"
+          id="closeModalBtn"
+          type="button"
+          aria-label="Close dialog"
+        >
+          ×
+        </button>
+      </div>
+
       <form id="memoryForm">
-        <label>What happened?
-          <input required name="title" maxlength="70" placeholder="e.g. Late night drive with friends" />
+        <input type="hidden" id="memoryId" />
+
+        <label for="memoryTitle">
+          Title
+          <input
+            id="memoryTitle"
+            name="title"
+            type="text"
+            maxlength="60"
+            placeholder="Late night drive"
+            required
+          />
         </label>
-        <div class="form-row">
-          <label>Type
-            <select name="type">
-              <option value="music">♪ Music</option>
-              <option value="place">⌖ Place</option>
-              <option value="purchase">₹ Purchase</option>
-              <option value="photo">◉ Photo</option>
-              <option value="message">✉ Message</option>
-            </select>
-          </label>
-          <label>Date
-            <input required name="date" type="date" />
-          </label>
-        </div>
-        <label>Details
-          <input name="detail" maxlength="90" placeholder="A short detail about this memory" />
+
+        <label for="memoryType">
+          Category
+          <select id="memoryType" name="type" required>
+            <option value="music">Music</option>
+            <option value="place">Place</option>
+            <option value="purchase">Purchase</option>
+            <option value="photo">Photo</option>
+            <option value="message">Message</option>
+          </select>
         </label>
-        <div class="form-row">
-          <label>Value
-            <input name="value" maxlength="20" placeholder="PRICELESS" />
-          </label>
-          <label>Location
-            <input name="location" maxlength="40" placeholder="Optional" />
-          </label>
+
+        <label for="memoryDate">
+          Date
+          <input id="memoryDate" name="date" type="date" required />
+        </label>
+
+        <label for="memoryPlace">
+          Place
+          <input
+            id="memoryPlace"
+            name="place"
+            type="text"
+            maxlength="60"
+            placeholder="Badrak, India"
+            required
+          />
+        </label>
+
+        <label for="memoryNote">
+          Note
+          <textarea
+            id="memoryNote"
+            name="note"
+            rows="4"
+            maxlength="180"
+            placeholder="What made this moment worth keeping?"
+            required
+          ></textarea>
+        </label>
+
+        <label for="memoryValue">
+          Memory value
+          <input
+            id="memoryValue"
+            name="value"
+            type="text"
+            maxlength="30"
+            placeholder="PRICELESS"
+            required
+          />
+        </label>
+
+        <div class="modal-actions">
+          <button
+            class="ghost-btn"
+            id="cancelModalBtn"
+            type="button"
+          >
+            Cancel
+          </button>
+
+          <button class="primary-btn" type="submit">
+            Save receipt
+          </button>
         </div>
-        <button class="primary-btn full" type="submit">Create receipt →</button>
       </form>
-    </div>
+    </section>
   </div>
 
-  <div class="toast" id="toast" role="status"></div>
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
   <script src="script.js"></script>
 </body>
 </html>
