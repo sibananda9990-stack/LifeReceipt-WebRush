@@ -1,36 +1,87 @@
 # LifeReceipt — Your Life, In Receipts 🧾
 
-A frontend-only WebRush hackathon project based on the challenge **“Your Life, In Receipts.”**
+A responsive frontend-only web experience for the WebRush hackathon challenge:
 
-## Concept
-Your digital life is made of hundreds of tiny moments — a song played at 2 AM, a place visited, a photo taken, something purchased, a movie watched, or a message sent. LifeReceipt turns those moments into a searchable, visual receipt archive.
+> **Your Life, In Receipts 🧾**
 
-## Features
-- Responsive, mobile-first interface
-- Receipt-style memory cards
-- Search across title, detail, place and type
-- Category filters: Music, Places, Purchases, Photos, Messages
-- Add new memories with a modal form
-- Data persistence with `localStorage`
-- Dark/light mode
-- Random “Surprise me” memory
-- Live statistics
-- Keyboard-accessible modal and semantic controls
-- No backend or API required
+LifeReceipt turns everyday digital moments into a visual receipt-style memory archive.
 
-## Run locally
-Open `index.html` directly in a browser, or use VS Code Live Server.
+A song you played late at night, a place you visited, a photo you captured, something you purchased, or a message you sent — each moment becomes a small receipt.
 
-## Deploy
-This is a static website and can be deployed using GitHub Pages, Netlify or Vercel.
+---
 
-## Files
-- `index.html` — structure and content
-- `style.css` — responsive visual design
-- `script.js` — filtering, search, localStorage, modal and interactions
+## ✨ Features
 
-## Hackathon
-**WebRush — 6-Hour Frontend Hackathon**  
-Track: **Your Life, In Receipts**
+- 🧾 Receipt-style memory cards
+- ➕ Add new memories
+- ✏️ Edit existing memories
+- 🗑️ Delete memories
+- 🔎 Search memories
+- 🏷️ Filter by category
+- ↕️ Sort memories
+- 🎲 Surprise Me random memory
+- 📊 Live memory statistics
+- 📈 Category breakdown
+- 🔥 Memory streak indicator
+- 🌙 Dark / light theme
+- 💾 LocalStorage data persistence
+- 📤 Export memories as JSON
+- 📱 Responsive mobile-first layout
+- ♿ Accessibility-focused controls
+- ⌨️ Keyboard-friendly modal interaction
+- 🚫 No backend or API required
 
-Built as a frontend-only experience.
+---
+
+## 🎯 Concept
+
+Your digital life creates hundreds of tiny moments.
+
+Instead of treating them like ordinary data, LifeReceipt presents them as personal receipts.
+
+Each receipt contains:
+
+- Memory title
+- Category
+- Date
+- Location
+- Personal note
+- Memory value
+
+The goal is to make everyday digital moments feel meaningful and easy to revisit.
+
+---
+
+## 🗂️ Memory Categories
+
+| Category | Purpose |
+|---|---|
+| 🎵 Music | Songs and playlists |
+| 📍 Places | Locations and trips |
+| ₹ Purchases | Things you bought |
+| 📷 Photos | Photos and visual moments |
+| ✉️ Messages | Important conversations |
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Browser LocalStorage
+- GitHub Pages
+
+No frameworks or backend services are required.
+
+---
+
+## 📁 Project Structure
+
+```text
+LifeReceipt-WebRush/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
