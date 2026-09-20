@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LifeReceipt turns your digital memories into a beautiful searchable timeline of receipts." />
+  <title>LifeReceipt — Your Life, In Receipts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="LifeReceipt home">
+        <span class="brand-mark">⌁</span>
+        <span>Life<span>Receipt</span></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">☾</button>
+        <button class="avatar" aria-label="Profile">KS</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">YOUR DIGITAL LIFE, ORGANIZED</p>
+          <h1>Your Life,<br><span>In Receipts.</span></h1>
+          <p class="hero-copy">Every song, place, photo, purchase and message becomes a tiny receipt of who you were in that moment.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="addBtn">＋ Add a memory</button>
+            <button class="ghost-btn" id="randomBtn">✦ Surprise me</button>
+          </div>
+        </div>
+        <div class="hero-receipt" aria-label="Sample life receipt">
+          <div class="receipt-top">
+            <span>LIFERECEIPT™</span><span>#2026-091</span>
+          </div>
+          <div class="receipt-title">A SMALL DAY<br>WORTH KEEPING.</div>
+          <div class="receipt-line"></div>
+          <div class="mini-row"><span>♪ Late Night Drive</span><b>01:42</b></div>
+          <div class="mini-row"><span>⌖ Bhadrak, IN</span><b>18 km</b></div>
+          <div class="mini-row"><span>◉ Coffee & thoughts</span><b>₹120</b></div>
+          <div class="receipt-line"></div>
+          <div class="receipt-total"><span>MEMORY VALUE</span><b>PRICELESS</b></div>
+          <div class="barcode">▌▌ ▌▌▌ ▌ ▌▌ ▌▌▌ ▌▌</div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Memory statistics">
+        <div class="stat-card"><span>Total receipts</span><strong id="totalStat">12</strong><small>captured moments</small></div>
+        <div class="stat-card"><span>This month</span><strong id="monthStat">07</strong><small>new memories</small></div>
+        <div class="stat-card"><span>Places</span><strong id="placesStat">05</strong><small>locations visited</small></div>
+        <div class="stat-card"><span>Most active</span><strong id="activeStat">Night</strong><small>your memory hour</small></div>
+      </section>
+
+      <section class="toolbar-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE ARCHIVE</p>
+            <h2>Your memory receipts</h2>
+          </div>
+          <span class="count-pill" id="countPill">12 receipts</span>
+        </div>
+        <div class="toolbar">
+          <label class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Search memories, places, songs..." />
+          </label>
+          <div class="filters" role="group" aria-label="Filter memories">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="music">♪ Music</button>
+            <button class="filter" data-filter="place">⌖ Places</button>
+            <button class="filter" data-filter="purchase">₹ Purchases</button>
+            <button class="filter" data-filter="photo">◉ Photos</button>
+            <button class="filter" data-filter="message">✉ Messages</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="receipt-grid" id="receiptGrid" aria-live="polite"></section>
+      <div class="empty" id="emptyState" hidden>
+        <div class="empty-icon">⌁</div>
+        <h3>No receipt found</h3>
+        <p>Try another search or add a new memory.</p>
+        <button class="primary-btn" id="emptyAddBtn">＋ Add memory</button>
+      </div>
+    </main>
+
+    <footer>
+      <span>LifeReceipt © 2026</span>
+      <span>Made for WebRush · Frontend-only experience</span>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <p class="eyebrow">NEW RECEIPT</p>
+      <h2 id="modalTitle">Capture a moment.</h2>
+      <p class="modal-sub">Turn a tiny part of your digital life into a receipt you can keep.</p>
+      <form id="memoryForm">
+        <label>What happened?
+          <input required name="title" maxlength="70" placeholder="e.g. Late night drive with friends" />
+        </label>
+        <div class="form-row">
+          <label>Type
+            <select name="type">
+              <option value="music">♪ Music</option>
+              <option value="place">⌖ Place</option>
+              <option value="purchase">₹ Purchase</option>
+              <option value="photo">◉ Photo</option>
+              <option value="message">✉ Message</option>
+            </select>
+          </label>
+          <label>Date
+            <input required name="date" type="date" />
+          </label>
+        </div>
+        <label>Details
+          <input name="detail" maxlength="90" placeholder="A short detail about this memory" />
+        </label>
+        <div class="form-row">
+          <label>Value
+            <input name="value" maxlength="20" placeholder="PRICELESS" />
+          </label>
+          <label>Location
+            <input name="location" maxlength="40" placeholder="Optional" />
+          </label>
+        </div>
+        <button class="primary-btn full" type="submit">Create receipt →</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
